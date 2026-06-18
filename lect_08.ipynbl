@@ -1,0 +1,267 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMg2mYcnJONHkvtfKhvSK/S",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ag6393163475-lab/Data_Science/blob/main/lect_08.ipynbl\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#OOPS\n",
+        "#four pillar\n",
+        "\n",
+        "#encapsulation\n",
+        "#(Binding data and methods together into a single unit (class) and restricting direct access.)\n",
+        "\n",
+        "#inheritance\n",
+        "#(One class acquires properties and methods of another class.)\n",
+        "#four types of inheritances\n",
+        "# (1).single Inheritance (2).multiple Inheritance\n",
+        "# (3).multilevel Inheritance (4).Hierarchical Inheritance\n",
+        "\n",
+        "#abstraction\n",
+        "#(Showing only necessary details and hiding implementation.)\n",
+        "\n",
+        "#Polymorphism\n",
+        "#(One function behaves differently in different situations.)\n"
+      ],
+      "metadata": {
+        "id": "dtYKmmOb9QvF"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class mirai_class:\n",
+        "  strength=100\n",
+        "  teacher=['a','b','c']\n",
+        "  div=['alpha','beta']\n",
+        "  sub=['ds','dsa','webdev']\n",
+        "\n",
+        "  # constructor(call itself when object is created)\n",
+        "  def __init__(self):\n",
+        "    print('hello')\n",
+        "\n",
+        "obj=mirai_class()\n",
+        "print(obj.strength)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UTIxI8SL4Urf",
+        "outputId": "4cfcdcdd-b40c-42fa-8353-af61604f1fbd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "hello\n",
+            "100\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4alLJsaO118T",
+        "outputId": "0fe144ee-496c-4af6-e52e-34c0d552591f"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "anshika\n",
+            "20\n"
+          ]
+        }
+      ],
+      "source": [
+        "# encapsulation\n",
+        "class student:\n",
+        "  def __init__(self,name,age):\n",
+        "\n",
+        "    self.name=name\n",
+        "    self.age=age\n",
+        "\n",
+        "\n",
+        "  def display(self):\n",
+        "\n",
+        "    print('name:',self.name)\n",
+        "    print('age:',self.age)\n",
+        "\n",
+        "a=student('anshika',20)\n",
+        "print(a.name)\n",
+        "print(a.age)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# inheritance(single)\n",
+        "class person:\n",
+        "  def __init__(self,h,w,age):\n",
+        "\n",
+        "    self.height=h\n",
+        "    self.weight=w\n",
+        "    self.age=age\n",
+        "\n",
+        "class Anshika(person):\n",
+        "\n",
+        "  def __init__(self , g,name,b,h,w,age):\n",
+        "\n",
+        "    super().__init__(h,w,age)\n",
+        "\n",
+        "    self.gender=g\n",
+        "    self.name = name\n",
+        "    self.bank_balance = b\n",
+        "\n",
+        "obj=Anshika( \"female\",\"anshika\",100,5,55,19)\n",
+        "print(obj.bank_balance)\n",
+        "print(obj.age)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BiHzacZG7B8V",
+        "outputId": "536c7ade-5007-4432-f9c2-5f8e918e329e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "100\n",
+            "19\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# multiple inheritance\n",
+        "class Father:\n",
+        "    def skill1(self):\n",
+        "        print(\"Coding\")\n",
+        "\n",
+        "class Mother:\n",
+        "    def skill2(self):\n",
+        "        print(\"Cooking\")\n",
+        "\n",
+        "class Child(Father, Mother):\n",
+        "    pass\n",
+        "\n",
+        "c = Child()\n",
+        "\n",
+        "c.skill1()\n",
+        "c.skill2()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8j2k_kiH8QxQ",
+        "outputId": "075c4aa9-cb9a-4338-cc9f-1c3061be1a1b"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Coding\n",
+            "Cooking\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Polymorphism\n",
+        "class Complex:\n",
+        "\n",
+        "    def __init__(self, x, y):\n",
+        "        self.x = x\n",
+        "        self.y = y\n",
+        "\n",
+        "    def __add__(self, other):\n",
+        "        a = self.x + other.x\n",
+        "        b = self.y + other.y\n",
+        "        return Complex(a, b)\n",
+        "\n",
+        "    def display(self):\n",
+        "        print(self.x, \"+ i\", self.y)\n",
+        "\n",
+        "\n",
+        "a = Complex(2, 3)\n",
+        "b = Complex(4, 3)\n",
+        "\n",
+        "c = a + b\n",
+        "\n",
+        "print(c.x, c.y)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Nd1vvj-0MT16",
+        "outputId": "b6adb397-baca-490b-b1b5-b9652dc302c8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "6 6\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "c2JG_0eR8PyO"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
